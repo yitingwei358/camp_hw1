@@ -25,7 +25,7 @@
       padding: 8px 16px;
       line-height: 1.5rem;
       cursor: pointer;
-      &:focus-within {
+      &:focus {
         background-color: $color-lightGray;
         border-radius: $radius-base;
         font-weight: 700;
@@ -92,26 +92,30 @@
   padding-right: 4em;
 }
 
-.product-card {
-  width: $col-4;
+.product-list-item {
   margin-bottom: 24px;
-  border: 1px solid #{$color-lightGray};
-  border-radius: $radius-base;
-  display: flex;
-  flex-direction: column;
+  width: $col-4;
   @media screen and (max-width: 992px) {
     width: $col-6;
   }
   @media screen and (max-width: 767px) {
     width: 100%;
   }
+}
+
+.product-card {
+  border: 1px solid #{$color-lightGray};
+  border-radius: $radius-base;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
   &:hover > .product-card-img > img {
     transform: scale(1.2);
     transition: transform 0.7s;
   }
   &-img {
-    width: 100%;
-    height: 250px;
+    max-width: 100%;
     border-radius: #{$radius-base} #{$radius-base} 0px 0px;
     overflow: hidden;
   }
